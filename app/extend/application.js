@@ -30,13 +30,15 @@ module.exports = {
      * 启动调用
      */
     startTemplate() {
-        const filePath = path.join(this.config.baseDir, `app/${this.config.sources}/browser/index.html`);
+        if (this.config.env === 'prod') {
+            const filePath = path.join(this.config.baseDir, `app/${this.config.sources}/browser/index.html`);
 
-        this.templateData = fs.readFileSync(filePath).toString();
-        if (!core[RUN_MODE_LOCKED]) {
-            core.enableProdMode();
+            this.templateData = fs.readFileSync(filePath).toString();
+            if (!core[RUN_MODE_LOCKED]) {
+                core.enableProdMode();
+            }
+            this.bundleData = require(`../${this.config.sources}/server/main.bundle`);
         }
-        this.bundleData = require(`../${this.config.sources}/server/main.bundle`);
     },
 
     /**
