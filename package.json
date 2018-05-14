@@ -1,6 +1,6 @@
 {
     "name": "angular-ssr-seed",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "description": "angular server side rendering integrate whith egg2",
     "author": "James Liauw",
