@@ -3,7 +3,10 @@
     "version": "0.0.2",
     "license": "MIT",
     "description": "angular server side rendering integrate whith egg2",
-    "author": "James Liauw",
+    "author": {
+        "name": "James Liauw",
+        "email": "jamesliauw@163.com"
+    },
     "scripts": {
         "ng": "ng",
         "client": "ng serve --proxy-conf build/proxy.conf.json --host localhost --port 8088",
