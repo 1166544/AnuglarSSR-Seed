@@ -17,6 +17,8 @@
         "package-lock.json": true,
         "yarn.lock": true,
         "app/ngSources": true,
-        "app/view": false,
+        "app/view": true,
+        "app/.eslintignore": true,
+        "app/.eslintrc": true,
     },
 }

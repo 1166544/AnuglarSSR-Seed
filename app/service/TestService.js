@@ -22,10 +22,12 @@ class TestService extends Service {
   async request(api, opts) {
     const options = Object.assign({
       dataType: 'json',
-      timeout: [ '30s', '30s' ],
+      timeout: ['30s', '30s'],
     }, opts);
 
     const result = await this.ctx.curl(`${this.serverUrl}/${api}`, options);
+
+
     return result.data;
   }
 
@@ -35,18 +37,20 @@ class TestService extends Service {
    * @param {Number} [pageSize] - page count
    * @return {Promise} id list
    */
-  async getTopStories(page, pageSize) {
-    page = page || 1;
-    pageSize = pageSize || this.pageSize;
+  async getTopStories(pageNum, pageSizeNum) {
+    const page = pageNum || 1;
+    const pageSize = pageSizeNum || this.pageSize;
 
     const result = await this.request('topstories.json', {
       data: {
         orderBy: '"$key"',
         startAt: `"${pageSize * (page - 1)}"`,
-        endAt: `"${pageSize * page - 1}"`,
+        endAt: `"${pageSize * (page - 1)}"`,
       },
     });
-    return Object.keys(result).map(key => result[key]);
+
+
+    return Object.keys(result).map((key) => result[key]);
   }
 
   /**

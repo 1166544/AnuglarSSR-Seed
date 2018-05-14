@@ -1,6 +1,6 @@
 'use strict';
-const reflectMetadata = require('reflect-metadata');
-const zoneNode = require('zone.js/dist/zone-node');
+require('reflect-metadata');
+require('zone.js/dist/zone-node');
 const platformServer = require('@angular/platform-server');
 const core = require('@angular/core');
 const path = require('path');
@@ -8,6 +8,7 @@ const fs = require('fs');
 
 const TEMPLATE_DATA = Symbol('Application#templateData');
 const BUNDLE_DATA = Symbol('Application#bundleData');
+const RUN_MODE_LOCKED = '_runModeLocked';
 
 module.exports = {
 
@@ -32,7 +33,7 @@ module.exports = {
         const filePath = path.join(this.config.baseDir, `app/${this.config.sources}/browser/index.html`);
 
         this.templateData = fs.readFileSync(filePath).toString();
-        if (!core._runModeLocked) {
+        if (!core[RUN_MODE_LOCKED]) {
             core.enableProdMode();
         }
         this.bundleData = require(`../${this.config.sources}/server/main.bundle`);
