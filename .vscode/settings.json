@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".history": true,
+        ".idea": true,
+        ".vscode": true,
+        "_mock": true,
+        "_nginx": true,
+        "run": true,
+        "logs": true,
+        "test": true,
+        "e2e": true,
+        "package-lock.json": true,
+        "yarn.lock": true,
+        "app/ngSources": true,
+        "app/view": true,
+    },
+}

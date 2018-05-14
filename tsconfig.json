@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,                 // 让IDE在保存文件的时候根据tsconfig.json重新生成文件。
+  "compilerOptions": {                    // 编译选项
+    "outDir": "./app/ngSources/out-tsc",
+    "sourceMap": true,
+    "declaration": false,                 // 是否生成d.ts
+    "moduleResolution": "node",           // 决定如何处理模块。或者是 "Node"对于Node.js/io.js，或者是 "Classic"（默认）。
+    "emitDecoratorMetadata": true,        // 给源码里的装饰器声明加上设计类型元数据
+    "experimentalDecorators": true,       // 启用实验性的ES装饰器。
+    "target": "es5",                      // 输出ES5代码
+    "typeRoots": [                        // 要包含的类型声明文件路径列表
+      "node_modules/@types"
+    ],
+    "lib": [                              // 编译过程中需要引入的库文件的列表
+      "es2017",
+      "dom"
+    ]
+  }
+}
