@@ -1,10 +1,9 @@
 'use strict';
 
 module.exports = app => {
-  const { router, controller } = app;
+    // 服务端渲染路由
+    require('./routers/NgRouter')(app);
 
-  app.get('/', controller.ng.ng.index);
-  app.get('/translate', controller.ng.ng.index);
-  app.get('/search', controller.ng.ng.index);
-  app.get('/detail/:word', controller.ng.ng.index);
+    // 测试用路由
+    require('./routers/TestRouter')(app);
 };

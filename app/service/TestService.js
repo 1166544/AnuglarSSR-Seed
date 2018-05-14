@@ -5,7 +5,7 @@ const Service = require('egg').Service;
 /**
  * HackerNews Api Service
  */
-class HackerNews extends Service {
+class TestService extends Service {
   constructor(ctx) {
     super(ctx);
     this.config = this.ctx.app.config.news;
@@ -68,4 +68,4 @@ class HackerNews extends Service {
   }
 }
 
-module.exports = HackerNews;
+module.exports = TestService;
