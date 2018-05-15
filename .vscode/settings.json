@@ -14,6 +14,7 @@
         "logs": true,
         "test": true,
         "e2e": true,
+        "build": true,
         "package-lock.json": true,
         "yarn.lock": true,
         "app/ngSources": true,
